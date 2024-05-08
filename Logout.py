@@ -7,11 +7,7 @@ from utilidades import nav_page
 import firebase_admin
 from firebase_admin import credentials
 cred = credentials.Certificate(st.secrets.credentials.to_dict())
-firebase_admin.initialize_app(cred)
-
-auth = firebase_admin.auth()
-db = firebase_admin.database()
-
+app = firebase_admin.initialize_app(cred)
 
 st.set_page_config(page_title='SISMAD', page_icon='https://www.marinha.mil.br/sites/default/files/favicon-logomarca-mb.ico', layout="centered", initial_sidebar_state="collapsed", menu_items=None)
 
