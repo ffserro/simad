@@ -3,6 +3,8 @@ from utilidades import nav_page
 #from config import config
 import pyrebase
 
+st.write(st.secrets.credentials)
+
 import firebase_admin
 from firebase_admin import credentials
 cred = credentials.Certificate(st.secrets.credentials)
