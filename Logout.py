@@ -3,18 +3,21 @@ from utilidades import nav_page
 #from config import config
 #import json
 #import pyrebase
-
 from firebase_admin import credentials, initialize_app, auth, db
-cred = credentials.Certificate(st.secrets.credentials.to_dict())
-app = initialize_app(cred)
+
+st.session_state = {}
+st.session_state['authentication_status'] = False
+
+if not st.session_state['authentication_status']:
+	cred = credentials.Certificate(st.secrets.credentials.to_dict())
+	app = initialize_app(cred)
 
 st.set_page_config(page_title='SISMAD', page_icon='https://www.marinha.mil.br/sites/default/files/favicon-logomarca-mb.ico', layout="centered", initial_sidebar_state="collapsed", menu_items=None)
 
 # firebase = pyrebase.initialize_app('main', st.secrets.CONFIG_KEY)
 # auth = firebase.auth()
 # db = firebase.database()
-st.session_state = {}
-st.session_state['authentication_status'] = False
+
 
 login_form = st.form('Login')
 login_form.markdown("<h1 style='text-align: center;'>SIMAD</h1>", unsafe_allow_html=True)
