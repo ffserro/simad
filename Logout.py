@@ -5,7 +5,7 @@ import pyrebase
 
 import firebase_admin
 from firebase_admin import credentials
-cred = credentials.Certificate("path/to/serviceAccountKey.json")
+cred = credentials.Certificate(st.secrets.CRED.credentials)
 firebase_admin.initialize_app(cred)
 
 
