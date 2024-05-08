@@ -11,7 +11,7 @@ st.write(type(json.loads(json.dumps(st.secrets.credentials))))
 
 import firebase_admin
 from firebase_admin import credentials
-cred = credentials.Certificate(json.dumps(st.secrets.credentials))
+cred = credentials.Certificate(st.secrets.credentials.to_dict())
 firebase_admin.initialize_app(cred)
 
 
