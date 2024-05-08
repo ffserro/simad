@@ -1,5 +1,6 @@
 streamlit
 pyrebase
+firebase-admin
 PyJWT==1.7.1
 streamlit-elements
 streamlit-aggrid
