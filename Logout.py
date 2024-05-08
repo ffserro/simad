@@ -5,7 +5,7 @@ import json
 import pyrebase
 
 st.write(type(json.dumps(st.secrets.credentials.to_dict())))
-st.write(type(json.loads(json.dumps(st.secrets.credentials))))
+st.write(type(json.loads(json.dumps(st.secrets.credentials.to_dict()))))
 
 
 import firebase_admin
