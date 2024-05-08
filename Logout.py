@@ -2,6 +2,14 @@ import streamlit as st
 from utilidades import nav_page
 #from config import config
 import pyrebase
+
+import firebase_admin
+from firebase_admin import credentials
+cred = credentials.Certificate("path/to/serviceAccountKey.json")
+firebase_admin.initialize_app(cred)
+
+
+
 st.set_page_config(page_title='SISMAD', page_icon='https://www.marinha.mil.br/sites/default/files/favicon-logomarca-mb.ico', layout="centered", initial_sidebar_state="collapsed", menu_items=None)
 
 firebase = pyrebase.initialize_app(st.secrets.CONFIG_KEY)
