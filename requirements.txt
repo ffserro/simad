@@ -1,1 +1,12 @@
 streamlit
+pyrebase4
+PyJWT==1.7.1
+streamlit-elements
+streamlit-aggrid
+pyxlsb
+xlsxwriter
+
+# Streamlit components
+
+# Dependencies
+requests
