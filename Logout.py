@@ -4,10 +4,9 @@ from utilidades import nav_page
 #import json
 #import pyrebase
 
-import firebase_admin
-from firebase_admin import credentials
+from firebase_admin import credentials, initialize_app, auth, db
 cred = credentials.Certificate(st.secrets.credentials.to_dict())
-app = firebase_admin.initialize_app(cred)
+app = initialize_app(cred)
 
 st.set_page_config(page_title='SISMAD', page_icon='https://www.marinha.mil.br/sites/default/files/favicon-logomarca-mb.ico', layout="centered", initial_sidebar_state="collapsed", menu_items=None)
 
@@ -25,8 +24,8 @@ st.session_state['email'] = email
 password = login_form.text_input('Senha', type='password')
 if login_form.form_submit_button('Entrar'):
 	try:
-		user = app.sign_in_with_email_and_password(email, password)
-		query = list(app.child('usuarios').order_by_child('email').equal_to(st.session_state['email']).get().val().values())[0]
+		user = auth.sign_in_with_email_and_password(email, password)
+		query = list(db.child('usuarios').order_by_child('email').equal_to(st.session_state['email']).get().val().values())[0]
 		st.session_state['username'] = query['usuario']
 		st.session_state['origem'] = query['origem']
 		st.session_state['authentication_status'] = True
