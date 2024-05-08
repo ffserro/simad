@@ -2,7 +2,7 @@ import streamlit as st
 from utilidades import nav_page
 #from config import config
 import json
-import pyrebase
+#import pyrebase
 
 import firebase_admin
 from firebase_admin import credentials
