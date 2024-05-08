@@ -12,9 +12,9 @@ firebase_admin.initialize_app(cred)
 
 st.set_page_config(page_title='SISMAD', page_icon='https://www.marinha.mil.br/sites/default/files/favicon-logomarca-mb.ico', layout="centered", initial_sidebar_state="collapsed", menu_items=None)
 
-firebase = pyrebase.initialize_app(st.secrets.CONFIG_KEY)
-auth = firebase.auth()
-db = firebase.database()
+# firebase = pyrebase.initialize_app(st.secrets.CONFIG_KEY)
+# auth = firebase.auth()
+# db = firebase.database()
 st.session_state = {}
 st.session_state['authentication_status'] = False
 
