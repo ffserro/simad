@@ -7,14 +7,17 @@ import json
 import firebase_admin
 from firebase_admin import credentials
 cred = credentials.Certificate(st.secrets.credentials.to_dict())
-firebase_admin.initialize_app('admin', cred)
+firebase_admin.initialize_app(cred)
+
+auth = firebase_admin.auth()
+db = firebase_admin.database()
 
 
 st.set_page_config(page_title='SISMAD', page_icon='https://www.marinha.mil.br/sites/default/files/favicon-logomarca-mb.ico', layout="centered", initial_sidebar_state="collapsed", menu_items=None)
 
-firebase = pyrebase.initialize_app('main', st.secrets.CONFIG_KEY)
-auth = firebase.auth()
-db = firebase.database()
+# firebase = pyrebase.initialize_app('main', st.secrets.CONFIG_KEY)
+# auth = firebase.auth()
+# db = firebase.database()
 st.session_state = {}
 st.session_state['authentication_status'] = False
 
