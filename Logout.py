@@ -4,6 +4,11 @@ from utilidades import nav_page
 import json
 import pyrebase
 
+st.write(type(st.secrets.credentials))
+st.write(type(json.dumps(st.secrets.credentials)))
+st.write(type(json.loads(json.dumps(st.secrets.credentials))))
+
+
 import firebase_admin
 from firebase_admin import credentials
 cred = credentials.Certificate(json.dumps(st.secrets.credentials))
