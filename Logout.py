@@ -16,11 +16,6 @@ except:
 
 st.set_page_config(page_title='SISMAD', page_icon='https://www.marinha.mil.br/sites/default/files/favicon-logomarca-mb.ico', layout="centered", initial_sidebar_state="collapsed", menu_items=None)
 
-# firebase = pyrebase.initialize_app('main', st.secrets.CONFIG_KEY)
-# auth = firebase.auth()
-# db = firebase.database()
-
-
 login_form = st.form('Login')
 login_form.markdown("<h1 style='text-align: center;'>SIMAD</h1>", unsafe_allow_html=True)
 login_form.markdown("<img style='display: block; margin-left: auto; margin-right: auto; width:40%;' src='https://firebasestorage.googleapis.com/v0/b/simad-9b125.appspot.com/o/Imagens%2Fcomgptpatnavsse.png?alt=media&token=22b66cc9-e9d4-4056-9de1-193f368519b7' alt='ComGptPatNavSSE' width='500'>", unsafe_allow_html=True)
