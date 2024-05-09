@@ -6,11 +6,11 @@ from utilidades import nav_page
 from firebase_admin import credentials, initialize_app, auth, db
 
 st.session_state = {}
-st.session_state['authentication_status'] = False
 
-if not st.session_state['authentication_status']:
+if not st.session_state['authentication_status'] or 'authentication_status' not in st.session_state:
 	cred = credentials.Certificate(st.secrets.credentials.to_dict())
 	app = initialize_app(cred)
+	st.session_state['authentication_status'] = True
 
 st.set_page_config(page_title='SISMAD', page_icon='https://www.marinha.mil.br/sites/default/files/favicon-logomarca-mb.ico', layout="centered", initial_sidebar_state="collapsed", menu_items=None)
 
