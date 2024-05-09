@@ -11,7 +11,7 @@ cred = credentials.Certificate(st.secrets.credentials.to_dict())
 try:
 	app = initialize_app(cred)
 except:
-	continue
+	pass
 
 
 st.set_page_config(page_title='SISMAD', page_icon='https://www.marinha.mil.br/sites/default/files/favicon-logomarca-mb.ico', layout="centered", initial_sidebar_state="collapsed", menu_items=None)
